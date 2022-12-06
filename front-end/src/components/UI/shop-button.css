@@ -1,0 +1,38 @@
+.diagonal-tr-bl-in {
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    transition: 0.4s ease;
+    z-index: 1;
+  }
+  .diagonal-tr-bl-in:hover > * {
+      color: #fff !important;
+  }
+  .diagonal-tr-bl-in:hover  {
+      color: #fff !important;
+  }
+  .diagonal-tr-bl-in::before , .diagonal-tr-bl-in:after{
+      
+      background:var(--primary-color);
+      transition: 0.3s ease;
+      content: '';
+      position: absolute;
+      z-index: -1;
+    }
+  .diagonal-tr-bl-in:before,
+  .diagonal-tr-bl-in:after {
+    top: 0;
+    bottom: 0;
+    transform: skewX(45deg);
+    width: 100%;
+  }
+  .diagonal-tr-bl-in:before {
+    right: -120%;
+  }
+  .diagonal-tr-bl-in:after {
+    left: -120%;
+  }
+  .diagonal-tr-bl-in:hover::before,
+  .diagonal-tr-bl-in:hover::after {
+    width: 175%;
+  }

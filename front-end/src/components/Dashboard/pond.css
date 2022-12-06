@@ -1,0 +1,12 @@
+.filepond--root {
+    height: 300px;
+    max-height: 300px;
+    margin-inline: auto;
+    max-width: 40rem;
+}
+
+/* bordered drop area */
+.filepond--panel-root {
+    background-color: transparent;
+    border: 2px dashed var(--dark-bg);
+}
