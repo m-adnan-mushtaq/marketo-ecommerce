@@ -1,10 +1,16 @@
 import LoadingButton from "components/UI/LoadingButton"
 import { useRef } from "react"
+import { toast } from "react-toastify"
 import { FormGroup, Form, Input, Label } from "reactstrap"
 export const EditModal = ({ category,editHandler ,isLoading}) => {
   const catRef=useRef()
   const submitHandler=(e)=>{
     e.preventDefault()
+    let value=catRef.current.value
+    if(!value || !value.trim()) {
+      toast.warning('Please fill input!')
+      return
+    }
     editHandler(catRef.current.value,category._id)
   }
   return (

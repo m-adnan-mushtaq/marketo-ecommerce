@@ -8,13 +8,13 @@ const Summary = ({data:{totalCats,totalProducts}}) => {
         <Row className="gap-3  align-items-center">
             <Col sm={5} >
                 <InfoCard
-                    label='Total Catagories'
+                    label='My Catagories'
                     count={totalCats}
                 />
             </Col>
             <Col sm={5} >
                 <InfoCard
-                    label='Total Products'
+                    label='My Products'
                     count={totalProducts}
                 />
             </Col>

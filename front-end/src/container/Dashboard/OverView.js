@@ -38,7 +38,7 @@ const OverView = () => {
     try {
         if(!name || updateLoading || !id) return
          await updateCat({id,body:{name}}).unwrap()
-        toast.info(`Category Name ${name} updated!`)
+        toast.success(`Category Name ${name} updated!`)
         setShowEditModal(false)
     } catch (error) {
       console.error(error.message);

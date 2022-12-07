@@ -18,7 +18,6 @@ categorySchema.pre('deleteOne', async function (next) {
     try {
         //grab user id
         const category = this.getQuery()._id
-        console.log(this.getQuery());
         if(!category) throw Error('No category id found!')
 
         // delete all products

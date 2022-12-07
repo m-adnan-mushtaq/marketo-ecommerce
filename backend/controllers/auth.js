@@ -14,7 +14,8 @@ async function signUpHanlder(req, res) {
                 id: user._id,
             })
         } catch (error) {
-            console.error(error)
+            if(error.code==11000) error = new Error('Email is already in use!')
+            console.log(error);
             res.status(400).json({
                 error: error.message
             })

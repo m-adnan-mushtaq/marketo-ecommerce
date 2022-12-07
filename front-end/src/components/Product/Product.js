@@ -8,10 +8,10 @@ const Product = (props) => {
         <Card className="bg-light shadow m-2">
         <CardBody className="d-flex px-3 py-3">
             <div className="img-wrapper">
-                <img className="img-fluid" src={props.imagePath} alt={props.title} />
+                <img className="img-fluid" src={props.imagePath || props.imgUrl} alt={props.title} />
             </div>
             <div className="details p-2 flex-fill ">
-                <h4 className="my-1">{props.title}</h4>
+                <h4 className="my-1 text-truncate text-wrap">{props.title}</h4>
                 <Badge
                     color={pickRandowBg()}
                     pill

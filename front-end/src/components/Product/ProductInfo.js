@@ -1,14 +1,14 @@
 import {  Badge} from "reactstrap"
 import AddCartBtn from "components/Cart/AddCartBtn"
-const ProductInfo = ({product,isCenter}) => {
+const ProductInfo = ({product,isCenter,addons}) => {
     return (
         product?(
-            <div>
+            <div {...addons}>
                 <div className="img-wrapper">
-                    <img loading="lazy" src={product.imagePath} alt={product.title} />
+                    <img loading="lazy" src={product.imagePath || product.imgUrl} alt={product.title} />
                 </div>
                 <div className={`details p-2 ${isCenter && 'text-center'} `}>
-                    <h4 className="my-1">{product.title}</h4>
+                    <h4 className="my-1 turncate-title">{product.title}</h4>
                     <Badge
                         color="warning"
                         pill

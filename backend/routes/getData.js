@@ -5,7 +5,7 @@ const router=Router()
 /** ------------------------------------------------------------------------------------------------
  *  @method GET
     @desc get all categories from api and save it to data-base
-    @route /auth/signup
+    @route /api/get-data
  **/
 router.get('/cats',fetchCategoires)
 

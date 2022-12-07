@@ -16,3 +16,4 @@ export function extractExtrasFromProduct(product) {
 export function findTargetElmHelper(resultArr,id) {
     return resultArr.find(elm=>elm._id.toString() === id.toString())
 }
+

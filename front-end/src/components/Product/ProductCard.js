@@ -7,7 +7,7 @@ const ProductCard = (props) => {
         <Card >
             <CardBody className="p-0">
                 <div className="img-wrapper">
-                    <img loading="lazy" src={product.imagePath} alt={product.title} />
+                    <img loading="lazy" src={product.imagePath || product.imgUrl} alt={product.title} />
                 </div>
             </CardBody>
             <CardFooter className="text-center">

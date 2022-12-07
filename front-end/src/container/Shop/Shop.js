@@ -102,7 +102,10 @@ const Shop = () => {
       </div>
       {products}
       <UiModal open={showModal} closed={modalCloseHandler} title="Add to Cart?">
-          <ProductInfo 
+          <ProductInfo
+          addons={{
+            className:'item-modal'
+          }} 
           product={targetProduct}
           isCenter />
       </UiModal>

@@ -7,10 +7,10 @@ const CartItem = ({item}) => {
    const removeHandler=()=> dispatch(removeFromCart(item))
   return (
     <div>
-         <div className="d-flex flex-column flex-sm-row align-items-center px-3">
+         <div className="d-flex flex-column flex-md-row align-items-center px-3">
                 <div className="d-flex  align-items-center">
                     <div className="cart-img-box">
-                        <img src={item.imagePath} alt={item.title} />
+                        <img src={item.imagePath || item.imgUrl} alt={item.title} />
                     </div>
                     <h4 className="p-2">{item.title}</h4>
                 </div>

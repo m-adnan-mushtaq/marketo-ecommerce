@@ -1,12 +1,12 @@
 import { Badge, Button } from "reactstrap"
 
-const ProductRow = ({ i, title,imagePath,category,price ,deleted,updated}) => {
+const ProductRow = ({ i, title,imagePath,imgUrl,category,price ,deleted,updated}) => {
     return (
         <tr className="align-middle">
             <th scope="row">{i}</th>
             <td >
                 <div className="cart-img-box">
-                    <img src={imagePath} alt={title} loading='lazy' />
+                    <img src={imagePath || imgUrl} alt={title} loading='lazy' />
                 </div>
             </td>
             <td>

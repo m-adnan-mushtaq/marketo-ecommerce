@@ -21,7 +21,7 @@ const Profile = () => {
         id:user._id,body:{email,name} 
       }).unwrap()
       if (!result) throw Error('something went wrong!')
-      toast.info('Profile Updated!')
+      toast.success('Profile Updated!')
     } catch (error) {
       console.log(error.message)
       toast.error('Invalid Credentials, or Network Error')

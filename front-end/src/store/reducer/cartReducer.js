@@ -1,9 +1,9 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { addToCart, removeFromCart } from "store/actionCreator";
+import { addToCart, emptyCart, removeFromCart } from "store/actionCreator";
 
 const initialState = {
   cartItems: [],
-  totalPrice: 0.00,
+  totalPrice: 0.0,
 };
 
 const cartReducer = createReducer(initialState, (builder) => {
@@ -13,27 +13,33 @@ const cartReducer = createReducer(initialState, (builder) => {
     if (foundItem) {
       // increase it's quantity
       foundItem.quantity += 1;
-      state.totalPrice += parseFloat(foundItem.price)
+      state.totalPrice += parseFloat(foundItem.price);
     } else {
       foundItem = { ...item };
       foundItem.quantity = 1;
       state.cartItems.push(foundItem);
-      state.totalPrice += parseFloat(foundItem.price)
+      state.totalPrice += parseFloat(foundItem.price);
     }
   });
-  builder.addCase(removeFromCart, (state, { payload: item }) => {
+  builder.addCase(removeFromCart, (state, { payload: item, type }) => {
+    // console.log(type);
     //check if item already exists
     let foundItem = findItemHelper(item, state);
     if (!foundItem) return;
     // decrease it's quantity
     foundItem.quantity -= 1;
-    state.totalPrice -= parseFloat(foundItem.price)
+    state.totalPrice -= parseFloat(foundItem.price);
     if (foundItem.quantity === 0) {
       //it means it sould be removed
       state.cartItems = state.cartItems.filter(
         (doc) => doc._id !== foundItem._id
       );
+      // console.log(foundItem.quantity);
     }
+  });
+  builder.addCase(emptyCart, (state) => {
+    state.cartItems = [];
+    state.totalPrice = 0;
   });
 });
 

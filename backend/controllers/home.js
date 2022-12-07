@@ -39,8 +39,6 @@ export async function getHomePageData(req, res) {
                 doc = await doc.populate(productPopulateOptions)
                 return doc
             }))
-            console.log('request made');
-            console.log(hotProducts.length);
             res.status(200).json({
                 randomCats,
                 topProducts,

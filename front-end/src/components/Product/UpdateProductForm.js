@@ -1,6 +1,7 @@
 import CatgoryRefDropdown from "components/Category/CatgoryRefDropdown";
 import LoadingButton from "components/UI/LoadingButton";
 import { useRef } from "react";
+import { toast } from "react-toastify";
 import { FormGroup, Form, Input, Label } from "reactstrap";
 const UpdateProductForm = ({ cats, product,isLoading ,updateHandler}) => {
   const titleRef = useRef();
@@ -13,9 +14,13 @@ const UpdateProductForm = ({ cats, product,isLoading ,updateHandler}) => {
     let title=titleRef.current.value
     let price=priceRef.current.value
     let category=categoryRef.current.value
-    if(title) updateObject.title=title
-    if(price) updateObject.price=price
-    if(category) updateObject.category=category
+    if(!([title,price,category].every(Boolean))){
+      toast.warning('Please fill all input fileds!')
+      return
+    }
+    updateObject.title=title
+    updateObject.price=price
+    updateObject.category=category
     updateHandler(product._id,updateObject)
   }
   return (

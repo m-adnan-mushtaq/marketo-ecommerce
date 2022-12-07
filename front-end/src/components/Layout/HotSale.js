@@ -49,13 +49,15 @@ const HotSale = ({products}) => {
             <Row className="flex-fill">
                 {
                     products.length?(
-                        products.map(doc=>(
+                        <Row>
+                        {products.map(doc=>(
                             <Col md={6} lg={4}  key={doc._id}>
                                 <HotProdut
                                 product={doc}
                                 />
                             </Col>
-                        ))
+                        ))}
+                        </Row>
                     ):(
                         <InfoMsg msg="No Products added yet!" />
                     )

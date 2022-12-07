@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { removeUserCredentials, setUserCredentials } from "store/actionCreator";
+import { emptyCart, removeUserCredentials, setUserCredentials } from "store/actionCreator";
 import { apiSlice } from "./apiSlice";
 
 // fetchBaseQuery automatically adds `content-type: application/json` to the Headers and calls `JSON.stringify(body)`
@@ -57,6 +57,7 @@ export const extendedAuthApiSlice = apiSlice.injectEndpoints({
             //then logout current user
             dispatch(removeUserCredentials());
             localStorage.removeItem("persist");
+            dispatch(emptyCart())
           }
         } catch (error) {
           console.error(error.message);
@@ -77,6 +78,7 @@ export const extendedAuthApiSlice = apiSlice.injectEndpoints({
           await queryFulfilled;
           // console.log('logout request completed!');
           dispatch(removeUserCredentials());
+          dispatch(emptyCart())
           localStorage.removeItem("persist");
         } catch (error) {
           // console.error(error)

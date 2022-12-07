@@ -9,6 +9,7 @@ export const removeUserCredentials = createAction('auth/removeUserCredentials')
 // cart state action creator------------------
 export const addToCart = createAction('cart/addToCart')
 export const removeFromCart = createAction('cart/removeFromCart')
+export const emptyCart = createAction('cart/emptyCart')
 
 
 

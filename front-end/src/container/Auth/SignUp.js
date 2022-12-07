@@ -30,8 +30,8 @@ const SignUp = () => {
         toast.success('Successfully created account!')
 
     } catch (error) {
-        console.log(error.message)
-        toast.error('Invalid Credentials, or Network Error')
+        // console.log(error?.data.error)
+        toast.error(error?.data?.error || 'Invalid Credentials!')
 
     }
 }

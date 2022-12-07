@@ -5,7 +5,7 @@ const LoadingButton = ({loading,disabled,addons,clicked,children}) => {
         <Button
             onClick={clicked}
             {...addons}
-            disabled={disabled || loading}
+            disabled={loading || disabled}
         >
             {loading && (
                 <>

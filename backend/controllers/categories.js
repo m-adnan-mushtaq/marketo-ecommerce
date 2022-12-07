@@ -23,20 +23,21 @@ async function getAdminCategoires(req, res) {
     try {
         // find all categories
         const adminId= req.params.id
-        console.log(adminId);
+        // console.log(adminId);
         if(!adminId || !isValidObjectId(adminId)) throw Error('No Admin found!')
         // get all public and private cats
         const query={
-            $or:[
-                {createdBy:{$exists:false}},
-            ]
+            createdBy:adminId
+            // $or:[
+            //     {createdBy:{$exists:false}},
+            // ]
         }
-        if(adminId){
-            query['$or'].push({
-                createdBy:adminId
-            })
-        }
-        console.log(JSON.stringify(query));
+        // if(adminId){
+        //     query['$or'].push({
+        //         createdBy:adminId
+        //     })
+        // }
+        // console.log(JSON.stringify(query));
         const cats= await Category.find(query)
         res.json(cats)
         
@@ -92,7 +93,7 @@ async function deleteCategoryHandler(req, res) {
         const {id}= req.params
         if( !id) throw Error('Invalid Credentials')
         const delFeedBack=await Category.deleteOne({_id:id}).exec()
-        console.log(delFeedBack);
+        // console.log(delFeedBack);
 
         res.status(204).json()
     } catch (error) {

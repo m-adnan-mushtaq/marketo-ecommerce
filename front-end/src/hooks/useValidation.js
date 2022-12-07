@@ -7,7 +7,7 @@ const validityInfo={
         pattern:/^[A-Za-z\s]*$/
     },
     password:{
-        min:5,
+        min:6,
         required:true,
     },
     email:{

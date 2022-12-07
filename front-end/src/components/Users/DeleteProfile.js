@@ -13,7 +13,7 @@ const DeleteProfile = ({id}) => {
     const deleteProfileHandler=async()=>{
         try {
             await deleteProfile(id).unwrap()
-            toast.info('Profile Deleted Succesfully!')
+            toast.success('Profile Deleted Succesfully!')
             if(userId === id){
                 navigate('/sign-up')
             }

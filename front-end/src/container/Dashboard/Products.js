@@ -37,7 +37,7 @@ const Products = ({ cats }) => {
     if(!id || !updateCredentials) return
     try {
       await updateProduct({id,body:updateCredentials}).unwrap()
-      toast.info('Product Content Updated!')
+      toast.success('Product Content Updated!')
       setShowUpdateModal(false)
     } catch (error) {
       console.error(error.message);
@@ -60,7 +60,7 @@ const Products = ({ cats }) => {
     try {
         if(!id) return
         await deleteProduct(id).unwrap()
-        toast.info('Product Deleted!')
+        toast.success('Product Deleted!')
         setShowDeleteModal(false)
     } catch (error) {
       console.error(error.message);

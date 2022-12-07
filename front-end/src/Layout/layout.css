@@ -79,3 +79,14 @@ html {
   object-fit: contain;
   object-position: center;
 }
+.turncate-title{
+  width: 15ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item-modal .turncate-title{
+  width: unset;
+  white-space: normal;
+
+}

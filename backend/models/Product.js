@@ -31,7 +31,8 @@ const productSchema= new Schema({
     category:{
         type:'ObjectId',
         required:true
-    }
+    },
+    imgUrl:String
 },{
     timestamps:true,
     toJSON:{
