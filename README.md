@@ -1,4 +1,4 @@
-# Marketo - MERN STACK ECOMMERE WEBSITE with (React Strap & Redux Tookit with RTK Query)
+# Marketo - MERN STACK ECOMMERCE WEBSITE with (React Strap & Redux Tookit with RTK Query)
 ![Ui](demo/marketo-demo.gif)
 
 ## Description
