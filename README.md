@@ -1,7 +1,7 @@
 # Marketo - MERN STACK ECOMMERE WEBSITE with (React Strap & Redux Tookit with RTK Query)
 ![Ui](demo/marketo-demo.gif)
 
-## Descroption
+## Description
 This project fully fledged ecommerce-site made using MERN Stack Technologoy , with file uploading all `CRUD` operation on `User` , `Product` and `Product Category` with `CART` functionality
 
 ### FRONT END SCRIPTS 
